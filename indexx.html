@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYPER STUDIO.ORG</title>
+<style>
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#fff;color:#111;scroll-behavior:smooth;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+section{padding:100px 20px;}
+h2{font-size:2.5rem;text-align:center;margin-bottom:40px;color:#0077ff;}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);padding:15px 0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+nav ul{display:flex;justify-content:center;gap:35px;font-weight:600;}
+nav a{transition:0.3s;color:#111;font-size:16px;}
+nav a:hover{color:#ff007f;transform:scale(1.05);}
+
+/* ===== HERO ===== */
+#hero{height:100vh;display:flex;justify-content:center;align-items:center;position:relative;}
+
+/* default logo */
+#logo{
+  width:220px;
+  opacity:0;
+}
+
+/* fade intro */
+.fade{
+  animation:fadeInOut 2s ease forwards;
+}
+
+/* permanently fixed + glowing */
+.logo-fixed{
+  position:fixed;
+  bottom:15px; /* bottom-left corner */
+  left:15px;
+  width:70px;
+  opacity:1;
+  z-index:9999;
+  animation:glow 1.5s ease-in-out infinite alternate;
+}
+
+/* fade animation */
+@keyframes fadeInOut{
+  0%{opacity:0; transform:scale(0.8);}
+  40%{opacity:1; transform:scale(1);}
+  70%{opacity:1;}
+  100%{opacity:0; transform:scale(1);}
+}
+
+/* glowing effect */
+@keyframes glow{
+  0%{filter:drop-shadow(0 0 5px #0077ff);}
+  50%{filter:drop-shadow(0 0 15px #0077ff);}
+  100%{filter:drop-shadow(0 0 5px #0077ff);}
+}
+
+/* ===== SERVICES ===== */
+.container{max-width:1200px;margin:0 auto;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.service-card{background:#f0f0f0;padding:25px;border-radius:12px;text-align:center;transition:0.4s;box-shadow:0 4px 15px rgba(0,119,255,0.2);}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,119,255,0.4);}
+.service-card h3{color:#0077ff;margin-bottom:12px;font-size:1.3rem;}
+.service-card p{color:#333;font-size:0.95rem;}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;}
+.portfolio-card{background:#f0f0f0;padding:20px;border-radius:12px;text-align:center;transition:0.4s;box-shadow:0 4px 15px rgba(255,0,127,0.2);}
+.portfolio-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(255,0,127,0.4);}
+.portfolio-card h3{color:#ff007f;margin-bottom:8px;font-size:1.2rem;}
+.portfolio-card p{color:#333;font-size:0.9rem;}
+
+/* ===== TEAM ===== */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+.team-card{background:#f0f0f0;padding:20px;border-radius:12px;text-align:center;transition:0.4s;box-shadow:0 4px 15px rgba(0,255,127,0.2);}
+.team-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(0,255,127,0.4);}
+.team-photo{width:100px;height:100px;border-radius:50%;margin:0 auto 15px;overflow:hidden;transition:0.3s;}
+.team-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:0.3s;}
+.team-card:hover .team-photo img{transform:scale(1.1);}
+.social-icons{display:flex;justify-content:center;gap:12px;margin-top:12px;}
+.social-icons a img{width:28px;height:28px;transition:0.3s;}
+.social-icons a img:hover{transform:scale(1.3);}
+
+/* ===== CONTACT ===== */
+#contact form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+#contact input,#contact textarea{padding:14px;border:none;border-radius:6px;background:#f0f0f0;color:#111;font-size:1rem;transition:0.3s;}
+#contact input:focus,#contact textarea:focus{outline:none;border:1px solid #0077ff;}
+#response-msg{margin-top:15px;text-align:center;color:#0077ff;font-size:1rem;}
+
+/* ===== MEDIA ===== */
+@media(max-width:768px){
+  nav ul{flex-direction:column;gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img id="logo" src="logo.jpeg" alt="Hyper Studio Logo">
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="container services-grid">
+    <div class="service-card"><h3>Video Editing</h3><p>Social media & cinematic video editing.</p></div>
+    <div class="service-card"><h3>Web Development</h3><p>Responsive websites & modern landing pages.</p></div>
+    <div class="service-card"><h3>Graphic Design</h3><p>Thumbnails, posters & social media graphics.</p></div>
+    <div class="service-card"><h3>Audio Production</h3><p>Mixing, mastering & sound design.</p></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="container portfolio-grid">
+    <div class="portfolio-card"><h3>Video Projects</h3><p>Reels, YouTube, Ads</p></div>
+    <div class="portfolio-card"><h3>Web Projects</h3><p>Business & landing pages</p></div>
+    <div class="portfolio-card"><h3>Graphics Work</h3><p>Thumbnails, banners, posters</p></div>
+    <div class="portfolio-card"><h3>Audio Projects</h3><p>Mixing & mastering works</p></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <h2>Meet Our Team</h2>
+  <div class="container team-grid">
+    <div class="team-card">
+      <div class="team-photo"><img src="adi.jpeg" alt="Adi"></div>
+      <h3>Adi Islam</h3>
+      <h6>SENIOR WEB DEVELOPER & FREELANCER</h6>
+      <div class="social-icons">
+        <a href="#"><img src="yt.jpeg" alt="YT"></a>
+        <a href="#"><img src="github.jpeg" alt="Git"></a>
+        <a href="#"><img src="fb.jpeg" alt="FB"></a>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="adil.jpeg" alt="Adil"></div>
+      <h3>Adil Hassan (FALCON BIRD)</h3>
+      <h6>THUMBNAILS & GRAPHICS DESIGNER (FOUNDER)</h6>
+      <div class="social-icons">
+        <a href="#"><img src="yt.jpeg" alt="YT"></a>
+        <a href="#"><img src="github.jpeg" alt="Git"></a>
+        <a href="#"><img src="fb.jpeg" alt="FB"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+  <div id="response-msg"></div>
+</section>
+
+<script>
+// Smooth scroll nav
+document.querySelectorAll('nav a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Contact form feedback
+document.getElementById('contact-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('response-msg').textContent="Message sent successfully!";
+  e.target.reset();
+});
+
+// Logo animation sequence
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.getElementById("logo");
+
+  // 1️⃣ Fade in → fade out (2s)
+  logo.classList.add("fade");
+
+  // 2️⃣ After fade (2s) → auto scroll down
+  setTimeout(() => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth"
+    });
+  }, 2000);
+
+  // 3️⃣ After scroll (total 4s) → logo permanently fixed + glowing
+  setTimeout(() => {
+    logo.className = "logo-fixed"; 
+  }, 4000);
+});
+</script>
+
+</body>
+</html>
